@@ -25,8 +25,8 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 		cuentas=copia;
 	}
 	
-	@Override
-	public boolean addItem(Cuenta_Bancaria item) {
+	
+	public boolean addItem11(Cuenta_Bancaria item) throws Exception {
 		boolean add=false;
 		if(!this.existeItem1(item)) {
 		if(this.isFull()) 
@@ -47,18 +47,25 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 	}
 
 
-	public boolean existeItem1(Cuenta_Bancaria item) {
+	public boolean existeItem1(Cuenta_Bancaria item) throws Exception {
+		
+	
 		boolean existe=false;
 		for(int i=0;i<=this.ultimo;i++)
-			if(item.compareTo(this.cuentas[i])==0) {
-				existe=true;
-				break;
+			if(item.compareTo(this.cuentas[i])==0);
+				
+		
+			
+				
+				throw new Exception("Cuenta Existente");
 			}
+		
+	
+			
+		
 					
-		return existe;
-	}
-
-	public Cuenta_Bancaria getItem1(int pos) {
+	
+	  public Cuenta_Bancaria getItem1(int pos) {
 		Cuenta_Bancaria cb=null;
 		if(pos<=this.ultimo&&!this.isFree())
 			cb=this.cuentas[pos];
@@ -70,7 +77,7 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 		return this.ultimo+1;
 	}
 
-	public boolean clear1(Cuenta_Bancaria item) {
+	public boolean clear1(Cuenta_Bancaria item) throws Exception {
 		boolean borrar=false;
 		if(this.existeItem1(item)) {
 			int i=0;
@@ -80,7 +87,11 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 			for(;i<=this.ultimo;i++)
 				cuentas[i]=cuentas[i+1];
 			this.ultimo--;
+		    if(ultimo==0);
 			borrar=true;
+		}
+		else {
+			throw new Exception("Una cuenta con Saldo distinto a 0 No se puede eliminar");
 		}
 		return borrar;
 	}
@@ -114,6 +125,7 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 	public boolean existeItem(Cuenta_Bancaria item) {
 		// TODO Auto-generated method stub
 		return false;
+		
 	}
 
 
@@ -129,6 +141,13 @@ public class CuentasBancareas implements Arreglo<Cuenta_Bancaria> {
 		// TODO Auto-generated method stub
 		return false;
 	
+	}
+
+
+	@Override
+	public boolean addItem(Cuenta_Bancaria item) throws Exception {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
 	

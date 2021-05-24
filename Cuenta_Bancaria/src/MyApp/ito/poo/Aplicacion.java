@@ -10,7 +10,7 @@ public class Aplicacion {
 
 	static Clases.ito.poo.CuentasBancareas c;
 	
-	static void menu() {
+	static void menu() throws Exception {
 		inicializa();
 		boolean ciclo=true;
 		int respuesta=0;
@@ -31,7 +31,7 @@ public class Aplicacion {
 		}
 	}
 	
-	static Cuenta_Bancaria capturarCuenta() {
+	static Cuenta_Bancaria capturarCuenta() throws Exception {
 		Cuenta_Bancaria n=new Cuenta_Bancaria();
 		long l;String fecha,nombre;float saldo;
 		l=Long.parseLong(JOptionPane.showInputDialog("Proporciona un número de cuenta:"));
@@ -49,7 +49,7 @@ public class Aplicacion {
 		c=new Clases.ito.poo.CuentasBancareas();
 	}
 	
-	static void agregarCuenta() {
+	static void agregarCuenta() throws Exception {
 		Cuenta_Bancaria nueva;
 		nueva=capturarCuenta();
 		if(c.addItem(nueva)) {

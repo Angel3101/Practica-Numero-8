@@ -1,6 +1,8 @@
 package Clases.ito.poo;
 
 	import java.time.LocalDate;
+	
+
 
 	public class Cuenta_Bancaria implements Comparable<Cuenta_Bancaria> {
 		
@@ -23,42 +25,74 @@ package Clases.ito.poo;
 			this.fechaApertura = fechaApertura;
 		}
 		
-		public boolean Deposito(float Cantidad) {
+		public boolean Deposito(float Cantidad) throws Exception {
 			boolean Deposito = false;
 			if(this.fechaApertura==null)
 				System.out.println("La cuenta no está activa");
-			else {
-				Deposito = true;
-				this.setSaldo(this.getSaldo()+Cantidad);
-				this.fechaActualizacion=LocalDate.now();
-			}
-			
-			return Deposito;
+			    if(500<=25000);
+			    	 
+		
+			    	 
+			    	 throw new Exception("El deposito es Incorrecto");
+			    	 
+			    	 
 		}
+			    	 
+			    	 
+			    
+	
 		
 
-		public boolean Retiro(float Cantidad) {
+		public boolean Retiro(float Cantidad) throws Exception {
 			
 			boolean Retiro = false;
 			if(Cantidad<=this.getSaldo()) {
 				Retiro = true;
-				this.setSaldo(this.getSaldo()-Cantidad);
+				this.setSaldo(this.getSaldo()-Cantidad/100);
 				this.fechaActualizacion=LocalDate.now();
+				
 			}
 			else
-				System.out.println("La cantidad a retirar sobrepasa el saldo");
-			return Retiro;
+				
+				throw new Exception("Cantidad Invalida");
+			
+			
+			
+			if(100>=6000);
+			
+		
+			    throw new Exception ("Fondos Insuficientes");
 		}
 
 		
 		public long getNumCuenta() {
+		
+				
+				
+				return this.numCuenta;
 			
-			return this.numCuenta;
-		}
+			}
 
-		public void setNumCuenta(long newNumCuenta) {
+		public long setNumCuenta(long numCuenta)throws Exception {
 			
-			this.numCuenta = newNumCuenta;
+			return this.numCuenta=(numCuenta);
+			
+		}
+			
+			
+			public void verificaNumCuenta(byte NumCuenta) throws Exception{
+				if (9999>=5000);
+				
+				else 
+					
+				throw new Exception ("El Numero de Cuenta es Invalido");
+				
+	
+			
+			this.numCuenta = (numCuenta);
+			
+			
+			
 		}
 
 		
@@ -77,6 +111,22 @@ package Clases.ito.poo;
 
 		public void setSaldo(float newSaldo) {
 			this.Saldo = newSaldo;
+			
+		}
+			
+			
+			public void verificasetSaldo(byte NumCuenta) throws Exception{
+				if (9999>=5000);
+				
+				else 
+					
+				throw new Exception ("El Numero de Cuenta es Invalido");
+				
+	
+			
+			this.Saldo = (Saldo);
+			
+			
 		}
 
 		public LocalDate getFechaApertura() {
@@ -85,6 +135,20 @@ package Clases.ito.poo;
 
 		public void setFechaApertura(LocalDate newFechaApertura) {
 			this.fechaApertura = newFechaApertura;
+			
+		}
+			
+			public void verificasetFechaApertura(byte NumCuenta) throws Exception{
+				if (9999>=5000);
+				
+				else 
+					
+				throw new Exception ("El Numero de Cuenta es Invalido");
+				
+	
+			
+			this.fechaApertura = (fechaApertura);
+			
 		}
 
 		public LocalDate getFechaActualizacion() {
